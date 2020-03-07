@@ -22,14 +22,14 @@ public class User {
 	private String mail;
 	private String mdp;
 	
-	@ManyToMany (cascade = {CascadeType.ALL})
+	
 	@JsonIgnore
+	@ManyToMany (cascade = {CascadeType.ALL})
 	@Column(unique = false,nullable = true)
 	private List<Device> UserDevices = new ArrayList<Device>(); 
 	
-	
-	@ManyToMany (cascade = {CascadeType.ALL})
 	@JsonIgnore
+	@ManyToMany (cascade = {CascadeType.ALL})
 	@Column(unique = false,nullable = true)
 	private List<Service> userServices = new ArrayList<Service>(); 
 	

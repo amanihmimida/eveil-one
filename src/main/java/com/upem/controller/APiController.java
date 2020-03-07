@@ -44,6 +44,8 @@ public class APiController {
 		if(res==null) {
 			return null;
 		}
+		res.setUserDevices(null);
+		res.setUserServices(null);
 		return res;	
 	}
 	
