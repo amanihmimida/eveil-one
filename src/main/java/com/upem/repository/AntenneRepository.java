@@ -11,7 +11,7 @@ import com.upem.models.User;
 public interface AntenneRepository extends CrudRepository<Antenne, Integer>{
 
 	
-	@Query(value = "SELECT * FROM iot.antenne where id =?1", nativeQuery = true)
+	@Query(value = "SELECT * FROM antenne where id =?1", nativeQuery = true)
 	Antenne getbyId(Integer id);
 	 
 

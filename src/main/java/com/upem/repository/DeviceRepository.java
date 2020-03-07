@@ -11,7 +11,7 @@ import com.upem.models.Device;
 public interface DeviceRepository extends CrudRepository<Device, Integer> {
 
 	
-	@Query(value = "SELECT * FROM iot.device where idf =?1 and cle =?2", nativeQuery = true)
+	@Query(value = "SELECT * FROM device where idf =?1 and cle =?2", nativeQuery = true)
 	Device getbyId(String idf, String key);
 	 
 }
