@@ -31,16 +31,15 @@ public class APiController {
 		return "home";
 	}
 	@PostMapping("/add")
-	public String addDemandeOffre(@RequestBody User dep) {
-		System.out.println(dep);
+	public String addUser(@RequestBody User dep) {
+		
 		repo.save(dep);
 		return "yes";
 	}
 	
-	@PostMapping("/login")
+	@PostMapping("/conn")
 	public String login(@RequestBody User user) {
 		
-		System.out.println(user);
 		User res= repo.login(user.getMail(), user.getMdp());
 		if(res==null) {
 			return "500";
