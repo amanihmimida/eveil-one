@@ -38,13 +38,13 @@ public class APiController {
 	}
 	
 	@PostMapping("/conn")
-	public String login(@RequestBody User user) {
+	public User login(@RequestBody User user) {
 		
 		User res= repo.login(user.getMail(), user.getMdp());
 		if(res==null) {
-			return "500";
+			return null;
 		}
-		return "200";	
+		return res;	
 	}
 	
 	@GetMapping("/getAll")

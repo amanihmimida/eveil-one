@@ -37,8 +37,7 @@ public class DeviceController {
 				 lisDevices.add(D);
 				 repo.save(A);
 				 return "ok";
-			 }
-			 
+			 } 
 		 }
 		 return "not";
 	}
@@ -49,7 +48,6 @@ public class DeviceController {
 		repoDev.save(dev);
 		return "ok";
 	}
-	
 	
 	@GetMapping("/getDeviceUser/{id}")
 	public List<Device> getDeviceUser(@PathVariable Integer id) {
