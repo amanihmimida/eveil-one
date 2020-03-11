@@ -9,7 +9,7 @@ import com.upem.models.Service;
 @Repository
 public interface ServiceRepository extends CrudRepository<Service, Integer> {
 
-	/*
-	@Query(value = "SELECT * FROM iot.device where idf =?1 and cle =?2", nativeQuery = true)
-	Service getbyId(String idf, String key);*/
+	
+	@Query(value = "SELECT * FROM service where id =?1", nativeQuery = true)
+	Service getbyId(Integer id);
 }

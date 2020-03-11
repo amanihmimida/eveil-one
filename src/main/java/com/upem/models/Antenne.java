@@ -1,23 +1,43 @@
 package com.upem.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-
 public class Antenne {
 
-	@Id
+	@Id @GeneratedValue
 	private Integer id; 
 	private String name;
 	private double leng;
 	private double alt;
 	private String status;
 	
+	@OneToMany(mappedBy="antenne")
+	private List<DeviceData>datas;
+	
+	
 	
 	public Antenne() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public List<DeviceData> getDatas() {
+		return datas;
+	}
+
+
+	public void setDatas(List<DeviceData> datas) {
+		this.datas = datas;
+	}
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -48,6 +68,7 @@ public class Antenne {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
 	@Override
 	public String toString() {
 		return "Antenne [id=" + id + ", name=" + name + ", leng=" + leng + ", alt=" + alt + ", status=" + status + "]";

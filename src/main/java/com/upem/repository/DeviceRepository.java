@@ -13,5 +13,8 @@ public interface DeviceRepository extends CrudRepository<Device, Integer> {
 	
 	@Query(value = "SELECT * FROM device where idf =?1 and cle =?2", nativeQuery = true)
 	Device getbyId(String idf, String key);
+	
+	@Query(value = "SELECT * FROM device where idf=?1", nativeQuery = true)
+	Device getbyIdMAc(String idf);
 	 
 }

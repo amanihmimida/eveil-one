@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.upem.models.Antenne;
 import com.upem.models.Device;
 import com.upem.models.User;
@@ -54,6 +55,23 @@ public class APiController {
 		return (List<User>) repo.findAll();
 	}
 	
+	
+	@GetMapping("/start")
+	public String StartMQTT() {
+		
+		
+		
+		return "ok";
+	}
+	
+	@GetMapping("/pub")
+	public String PubMQTT() {
+		
+		
+		
+		
+		return "ok";
+	}
 	
 	
 

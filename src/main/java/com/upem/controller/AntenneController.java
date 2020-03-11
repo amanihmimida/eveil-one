@@ -53,7 +53,7 @@ public class AntenneController {
 		 Antenne A= repo.getbyId(id);
 		 if(A!=null) {
 			 ant.setId(id);
-			 A = ant;
+			 A = ant; 
 			 repo.save(A);
 		 }
 	}

@@ -55,6 +55,13 @@ public class DeviceController {
 
 		return repo.getbyId(id).getUserDevices();
 	}
+	
+	
+	@GetMapping("/gettest")
+	public Device gettest() {
+
+		return repoDev.getbyIdMAc("yas");
+	}
 
 	@PostMapping("/deleteDeviceUser/{id}")
 	public String delete(@PathVariable Integer id,@RequestBody Device device  ) {
@@ -73,9 +80,6 @@ public class DeviceController {
 
 			}
 		}
-
-
-
 
 		if(stat == true)return "ok";
 
