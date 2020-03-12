@@ -32,10 +32,11 @@ public class APiController {
 		return "home";
 	}
 	@PostMapping("/add")
-	public User addUser(@RequestBody User dep) {
+	public String addUser(@RequestBody User dep) {
 		
-		repo.save(dep);
-		return dep;
+		User a =  repo.save(dep);
+		if(a == null) return "no";
+		return "yes";
 	}
 	
 	@PostMapping("/conn")
